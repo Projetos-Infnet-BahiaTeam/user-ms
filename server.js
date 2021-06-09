@@ -1,13 +1,16 @@
 
+const connection = require("./app/database/mongoose");
 const express = require('express');
 const app = express();
-app.use(express.urlencoded({ extended: true}))
+
+connection();
 app.use(express.json())
 
 const authentication = require('./app/security/authentication');
 const verifyToken = require('./app/security/verifyToken');
 
 require('dotenv').config();
+
 const PORT = process.env.SERVER_PORT || 6000;
 const router = express.Router();
 
