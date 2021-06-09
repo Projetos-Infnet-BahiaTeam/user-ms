@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const naoValidarToken = function(req){
-  return req.originalUrl === '/user/v1/auth/login' || req.originalUrl === '/user/v1/auth/registrar';
+  return req.originalUrl === '/api/user/v1/auth/login' || req.originalUrl === '/api/user/v1/auth/registrar';
 }
 
 function verifyToken(req, res, next) {

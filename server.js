@@ -21,13 +21,13 @@ router.use(verifyToken, function(req, res, next){
 
 //helth check
 router.get('/online', function(req, res){
-    res.json({message:'MS-USER IS UP'});
+    res.status(200).send({message:'MS-USER IS UP'});
 });
 
 router.use('/auth/', authentication);
 
 //use before any request
-app.use('/user/v1', router);
+app.use('/api/user/v1', router);
 
 // application start
 app.listen(PORT, () => {

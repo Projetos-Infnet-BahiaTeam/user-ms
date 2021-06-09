@@ -53,9 +53,10 @@ router.post('/registrar', function(req, res) {
 
 //Resource used to validate token
 router.get('/validartoken', verifyToken, function(req, res, next) {     
-    
-    Usuario.findById(req.userId,{ password: 0 }, function (err, user) {
-        if (err) {
+
+    User.findById(req.userId,{ password: 0 }, function (err, user) {
+        
+      if (err) {
           return res.status(500).send('An unexpected server error has occurred.');
         }
         if (!user){ 
