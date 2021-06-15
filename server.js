@@ -7,14 +7,13 @@ connection();
 app.use(express.json())
 
 const authentication = require('./app/security/authentication');
-const verifyToken = require('./app/security/verifyToken');
 
 require('dotenv').config();
 
 const PORT = process.env.SERVER_PORT || 6000;
 const router = express.Router();
 
-router.use(verifyToken, function(req, res, next){
+router.use(function(req, res, next){
     console.log('Calling ms-user... ');
     next();
 });

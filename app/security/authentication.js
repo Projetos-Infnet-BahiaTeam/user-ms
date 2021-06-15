@@ -7,7 +7,6 @@ const { User, registerValidation, loginValidation} = require('../models/user');
 
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const verifyToken = require('./verifyToken');
 require('dotenv').config();
 
 const KEY = process.env.SECRET_KEY;
@@ -51,7 +50,7 @@ router.post('/registrar', function(req, res) {
  
 });
 
-//Resource used to validate token
+/*Resource used to validate token
 router.get('/validartoken', verifyToken, function(req, res, next) {     
 
     User.findById(req.userId,{ password: 0 }, function (err, user) {
@@ -65,7 +64,7 @@ router.get('/validartoken', verifyToken, function(req, res, next) {
         
         res.status(200).send(user);
     });
-});
+});*/
 
 router.post('/login', async function(req, res) {
 
