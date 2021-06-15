@@ -1,9 +1,7 @@
-
-const connection = require("./app/database/mongoose");
+require('./app/database/mongoose');
 const express = require('express');
 const app = express();
 
-connection();
 app.use(express.json())
 
 const authentication = require('./app/security/authentication');
