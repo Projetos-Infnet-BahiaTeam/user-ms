@@ -42,7 +42,7 @@ router.post('/registrar', function(req, res) {
           console.error(err.message);
         });
 
-      res.status(200).send({ auth: true, token: token });
+      res.status(200).send({ auth: true });
     }
     catch (error) {
       console.log(error.message);
